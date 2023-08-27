@@ -6,6 +6,7 @@ import com.example.prog4.model.Employee;
 import com.example.prog4.model.EmployeeFilter;
 import com.example.prog4.service.CSVUtils;
 import com.example.prog4.service.EmployeeService;
+import com.example.prog4.service.PDFUtils;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -14,10 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -56,4 +54,15 @@ public class EmployeeController {
         employeeService.saveOne(domain);
         return "redirect:/employee/list";
     }
+    @GetMapping("/{id}/pdfForm")
+    public ResponseEntity<byte[]> getPdfForm(@PathVariable String id){
+        Employee employee = employeeMapper.toView(employeeService.getOne(id));
+        byte[] bytes = PDFUtils.pdfFromHtml(employee);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDispositionFormData("attachment", "Employee-" + employee.getId() + "-form.pdf");
+        headers.setContentLength(bytes.length);
+        return new ResponseEntity<>(bytes, headers, HttpStatus.OK);
+    }
+
 }
