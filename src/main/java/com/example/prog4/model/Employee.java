@@ -45,4 +45,6 @@ public class Employee implements Serializable {
 
     private List<Position> positions;
     private List<Phone> phones;
+
+    private Double salary;
 }
