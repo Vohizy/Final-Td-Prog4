@@ -47,4 +47,5 @@ public class Employee implements Serializable {
     private List<Phone> phones;
 
     private Double salary;
+    private int age;
 }
