@@ -54,6 +54,8 @@ public class Employee implements Serializable {
 
     private Integer childrenNumber;
 
+    private Double salary;
+
     @Enumerated(EnumType.STRING)
     @ColumnTransformer(read = "CAST(sex AS varchar)", write = "CAST(? AS sex)")
     private Sex sex;
