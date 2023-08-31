@@ -74,5 +74,8 @@ public class EmployeeValidator {
         if (!error.isEmpty()) {
             throw new BadRequestException(error.toString());
         }
+        if(employee.getSalary() == null || employee.getSalary() <= 0){
+            error.append("Monthly salary cannot be null or <= 0. ");
+        }
     }
 }

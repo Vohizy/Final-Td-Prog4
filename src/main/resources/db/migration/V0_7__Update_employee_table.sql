@@ -1,0 +1,1 @@
+ALTER TABLE IF EXISTS "employee" ADD COLUMN salary DECIMAL;
