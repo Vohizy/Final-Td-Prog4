@@ -3,7 +3,7 @@ package com.example.prog4.service;
 import java.time.LocalDate;
 
 public class CalculatorAge {
-    public static int fromBirth(LocalDate birthDate) {
+    public static int age(LocalDate birthDate) {
         if (birthDate == null){
             return 0;
         }

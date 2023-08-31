@@ -24,12 +24,12 @@ public class PDFUtils {
 
         Context context = new Context();
         context.setVariable("employee", employee);
-        context.setVariable("companyConf", new CompanyConf());
+        context.setVariable("company", new CompanyConf());
 
         return templateEngine.process("employee_pdf", context);
     }
 
-    public static byte[] pdfFromHtml(Employee employee) {
+    public static byte[]  pdfFromHtml(Employee employee) {
         String html = parseThymeleafTemplate(employee);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ITextRenderer render = new ITextRenderer();

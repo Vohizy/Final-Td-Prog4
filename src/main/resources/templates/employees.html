@@ -125,6 +125,9 @@
                     <a th:href="'/employee/show/'+*{employee.id}">
                         <button class="btn btn-primary">show</button>
                     </a>
+                    <a th:href="'/server/employee/'+*{employee.id}+'/pdfForm'">
+                        <button class="btn btn-primary">downlaod a pdf</button>
+                    </a>
                 </td>
             </tr>
             </tbody>

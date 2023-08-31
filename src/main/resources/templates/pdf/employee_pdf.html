@@ -102,21 +102,21 @@
 </div>
 <footer>
     <div class="footer">
-        <img class="footer-img" th:src="${companyConf.logo}"  src="#"/>
+        <img class="footer-img" th:src="${company.logo}"  src="#"/>
         <div class="footer-middle">
-            <p>Company: <span th:text="${companyConf.name}"></span></p>
-            <p>NIF: <span th:text="${companyConf.taxIdentity.nif}"></span></p>
-            <p>STAT: <span th:text="${companyConf.taxIdentity.stat}"></span></p>
+            <p>Company: <span th:text="${company.name}"></span></p>
+            <p>NIF: <span th:text="${company.taxIdentity.nif}"></span></p>
+            <p>STAT: <span th:text="${company.taxIdentity.stat}"></span></p>
         </div>
         <div class="footer-end">
-            <p>Address: <span th:text="${companyConf.address}"></span></p>
+            <p>Address: <span th:text="${company.address}"></span></p>
             <div style="padding-bottom: 20px">
                 <span>Phone : </span>
-                <span th:each="phone : ${companyConf.phones}">
+                <span th:each="phone : ${company.phones}">
                     <span th:text="${phone.value}"></span>
                 </span>
             </div>
-            <p>Email: <span th:text="${companyConf.email}"></span></p>
+            <p>Email: <span th:text="${company.email}"></span></p>
         </div>
     </div>
 </footer>

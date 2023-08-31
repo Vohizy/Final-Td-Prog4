@@ -21,6 +21,7 @@
         <input required id="id" name="id" th:field="*{id}" type="hidden"/>
         <input required id="registrationNumber" name="registrationNumber" th:field="*{registrationNumber}"
                type="hidden"/>
+        <input required id="age" name="age" th:field="*{age}" type="hidden"/>
         <div class="col-lg-4 col-md-6">
             <label for="lastName" class="form-label">Last name</label>
             <input required id="lastName" name="lastName" th:field="*{lastName}" type="text" class="form-control">
@@ -50,6 +51,11 @@
         <div class="col-lg-4 col-md-6">
             <label for="cin" class="form-label">CIN</label>
             <input required id="cin" name="cin" th:field="*{cin}" type="text" class="form-control">
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <label for="monthlySalary" class="form-label">Monthly salary</label>
+            <input required id="monthlySalary" name="monthlySalary" th:field="*{salary}" type="text"
+                   class="form-control">
         </div>
         <div class="col-lg-4 col-md-6">
             <label for="cnaps" class="form-label">CNAPS</label>

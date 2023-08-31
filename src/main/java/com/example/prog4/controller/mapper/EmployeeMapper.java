@@ -5,6 +5,7 @@ import com.example.prog4.model.exception.BadRequestException;
 import com.example.prog4.repository.PositionRepository;
 import com.example.prog4.repository.entity.Phone;
 import com.example.prog4.repository.entity.Position;
+import com.example.prog4.service.CalculatorAge;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -95,6 +96,9 @@ public class EmployeeMapper {
                 // lists
                 .phones(employee.getPhones().stream().map(phoneMapper::toView).toList())
                 .positions(employee.getPositions())
+                // age and salary
+                .age(CalculatorAge.age(employee.getBirthDate()))
+                .salary(employee.getSalary())
                 .build();
     }
 }
